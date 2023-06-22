@@ -623,9 +623,9 @@ for idx, code in labels.items():
     i+=1
 
 #model.output_projection.out_features = 1268
-train_dataset = pd.read_csv("/home/ana.lopes/mscmulmiesclin_v0.1/data/MP_IN_adm_train.csv")
-val_dataset = pd.read_csv("/home/ana.lopes/mscmulmiesclin_v0.1/data/MP_IN_adm_val.csv")
-test_dataset = pd.read_csv("/home/ana.lopes/mscmulmiesclin_v0.1/data/MP_IN_adm_test.csv")
+train_dataset = pd.read_csv("data/MP_IN_adm_train.csv")
+val_dataset = pd.read_csv("data/MP_IN_adm_val.csv")
+test_dataset = pd.read_csv("data/MP_IN_adm_test.csv")
 
 
 train_dataset['y_true'] = train_dataset['short_codes'].apply(lambda x : create_binary_vec(x, new_labels))
@@ -658,7 +658,7 @@ train(
     learning_curve=True,
     early_stopping=False,
     filename="biogpt",
-    save_path="/home/ana.lopes/mscmulmiesclin_v0.1/data/results"
+    save_path="data/results"
 )
 
 
