@@ -596,6 +596,7 @@ model = BioGptModel.from_pretrained("microsoft/biogpt", num_labels=1248)
 lin = torch.nn.Linear(model.config.hidden_size, 1248)
 model = CustomModel(model, lin)
 
+
 tokenizer = BioGptTokenizer.from_pretrained("microsoft/biogpt")
 set_seed(42)
 
@@ -631,9 +632,9 @@ train_dataset['y_true'] = train_dataset['short_codes'].apply(lambda x : create_b
 val_dataset['y_true'] = val_dataset['short_codes'].apply(lambda x : create_binary_vec(x, new_labels))
 test_dataset['y_true'] = val_dataset['short_codes'].apply(lambda x : create_binary_vec(x, new_labels))
 
-train_dataset = train_dataset[:2]
-val_dataset = val_dataset[:2]
-test_dataset = test_dataset[:2]
+#train_dataset = train_dataset[:2]
+#val_dataset = val_dataset[:2]
+#test_dataset = test_dataset[:2]
 
 x_train , y_train = df_column_to_array(train_dataset)
 x_val, y_val  = df_column_to_array(val_dataset)
