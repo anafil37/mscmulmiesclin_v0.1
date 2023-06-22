@@ -1,0 +1,14 @@
+data
+results
+1000_separeted.csv
+3000.csv
+4000.csv
+5000.csv
+dataset_ml.csv
+new_labels.pickle
+predicted_labels.csv
+prob_labels_mp.csv
+prob_labels.csv
+mimic_test.csv
+mimic_train.csv
+mimic_val.csv
